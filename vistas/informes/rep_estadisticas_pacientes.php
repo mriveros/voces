@@ -60,6 +60,8 @@ $pdf->AddPage();
 //------------------------RECIBIMOS LOS VALORES DE POST-----------
     if  (empty($_POST['desde_fecha'])){$desde='';}else{ $desde= $_POST['desde_fecha'];}
     if  (empty($_POST['hasta_fecha'])){$hasta='';}else{ $hasta= $_POST['hasta_fecha'];}
+    $desde= date("Y-m-d", strtotime($desde));
+    $hasta= date("Y-m-d", strtotime($hasta));
     
 //-------------------------Damos formato al informe-----------------------------    
 $pdf->AliasNbPages();

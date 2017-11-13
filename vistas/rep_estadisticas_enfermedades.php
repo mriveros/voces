@@ -19,12 +19,12 @@
                 <form autocomplete="off" class="form-horizontal" name="agregarform" action="informes/rep_estadisticas_enfermedades.php" method="post" role="form">
                         <div class="col col-md-5">
                             <label>Desde Fecha:</label>
-                            <input name="desde_fecha" id="desde_fecha" class="form-control" type="text" placeholder="Click Aqui" required>
+                            <input name="desde_fecha" id="desde_fecha" data-date-format="mm-dd-yyyy" class="form-control" type="text" placeholder="Click Aqui" required>
                                 <script type="text/javascript">
                                           Calendar.setup(
                                             {
                                           inputField : "desde_fecha",
-                                          ifFormat   : "%d-%m-%Y",
+                                          ifFormat   : "%Y-%m-%d",
                                           button     : "Image1"
                                             }
                                           );
@@ -35,12 +35,12 @@
                         </div>
                   <div class="col col-md-5">
                         <label>Hasta Fecha:</label>
-                        <input name="hasta_fecha" id="hasta_fecha" class="form-control" type="text" placeholder="Click Aqui" required >
+                        <input name="hasta_fecha" id="hasta_fecha" data-date-format="mm-dd-yyyy" class="form-control" type="text" placeholder="Click Aqui" required >
                         <script type="text/javascript">
                         Calendar.setup(
                         {
                         inputField : "hasta_fecha",
-                        ifFormat   : "%d-%m-%Y",
+                        ifFormat   : "%Y-%m-%d",
                         button     : "Image1"
                         }
                         );

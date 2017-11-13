@@ -63,7 +63,8 @@ $pdf->AddPage();
   if  (empty($_POST['enf_cod'])){$enf_cod='';}else{ $enf_cod= $_POST['enf_cod'];}
   if  (empty($_POST['desde_fecha'])){$desde='';}else{ $desde= $_POST['desde_fecha'];}
   if  (empty($_POST['hasta_fecha'])){$hasta='';}else{ $hasta= $_POST['hasta_fecha'];}
-    
+    $desde= date("d-m-Y", strtotime($desde));
+    $hasta= date("d-m-Y", strtotime($hasta));
 //-------------------------Damos formato al informe-----------------------------    
 $pdf->AliasNbPages();
 $pdf->SetFont('Arial','B',10);

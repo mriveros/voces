@@ -64,6 +64,8 @@ $pdf->AddPage();
    if  (empty($_POST['pac_cedula'])){$pac_cedula='';}else{ $pac_cedula= $_POST['pac_cedula'];}
    if  (empty($_POST['desde_fecha'])){$desde='';}else{ $desde= $_POST['desde_fecha'];}
    if  (empty($_POST['hasta_fecha'])){$hasta='';}else{ $hasta= $_POST['hasta_fecha'];}
+   $desde= date("Y-m-d", strtotime($desde));
+   $hasta= date("Y-m-d", strtotime($hasta));
 //-------------------------Damos formato al informe-----------------------------    
 $pdf->AliasNbPages();
 $pdf->SetFont('Arial','B',10);

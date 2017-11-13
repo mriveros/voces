@@ -14,8 +14,7 @@
         $pacientes = pg_fetch_all($query);
         $sql_num_citas="SELECT * FROM  cita_cnslt WHERE fecha_cita='$date'";
         $query_num_citas = pg_query($conectando->conectar(), $sql_num_citas) or die('ERROR AL BUSCAR DATOS: ' . pg_last_error());
-        
-?> 
+
 ?>
 
   <div class="content">

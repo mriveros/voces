@@ -44,7 +44,7 @@
                                           Calendar.setup(
                                             {
                                           inputField : "desde_fecha",
-                                          ifFormat   : "%d-%m-%Y",
+                                          ifFormat   : "%Y-%d-%m",
                                           button     : "Image1"
                                             }
                                           );
@@ -60,7 +60,7 @@
                         Calendar.setup(
                         {
                         inputField : "hasta_fecha",
-                        ifFormat   : "%d-%m-%Y",
+                        ifFormat   : "%Y-%d-%m",
                         button     : "Image1"
                         }
                         );

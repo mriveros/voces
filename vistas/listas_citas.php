@@ -20,7 +20,7 @@
     include_once('../control/conexion.php');
     include_once('sidebar.php');
     include_once('script.php');
-    $date = date('Y-m-d');
+    $date = date('d-m-Y');
     ini_set('display_errors', 'on');  //muestra los errores de php
     if  ($user_tipo==1 or $user_tipo==2){
     $buscarCitas="SELECT * FROM  cita_cnslt INNER JOIN pacnt_cnslt 
