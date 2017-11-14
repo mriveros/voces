@@ -13,7 +13,7 @@
 
   <div class="content">
         <div id="pad-wrapper" class="form-page"> 
-       <form autocomplete="off" class="form-horizontal" name="agregarform" action="informes/reportes_enfermedades.php" method="post" role="form">
+        <form>
         <div class="row">
             <div class="col col-md-3"></div>
         	<div class="col col-md-6">
