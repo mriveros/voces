@@ -20,7 +20,7 @@ if (pg_num_rows($query) > 0) {
 		print('<meta http-equiv="refresh" content="0; URL=../vistas/citas.php">');
 }else{
 	$INSERTAR=pg_query($conectando->conectar(), "INSERT INTO cita_cnslt (ci_pacnt_cita, fecha_cita, mot_cod, acmp_cita, estatus,observacion_cita,id_medic)
-		VALUES ('$ci_pacnt_cita', '$fecha_cita', '$motivo_cita', '$acmp_cita', '0','$observacion_cita',$med_cod)");	
+		VALUES ('$ci_pacnt_cita', to_date('$fecha_cita','dd-mm-yyyy'), '$motivo_cita', '$acmp_cita', '0','$observacion_cita',$med_cod)");	
 
 		if (!$INSERTAR) { 
 		    print ("<script>alert('La cita no pudo ser registrada');</script>");

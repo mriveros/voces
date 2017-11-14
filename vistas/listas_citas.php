@@ -20,7 +20,7 @@
     include_once('../control/conexion.php');
     include_once('sidebar.php');
     include_once('script.php');
-    $date = date('d-m-Y');
+    $date = date('Y-m-d');
     ini_set('display_errors', 'on');  //muestra los errores de php
     if  ($user_tipo==1 or $user_tipo==2){
     $buscarCitas="SELECT * FROM  cita_cnslt INNER JOIN pacnt_cnslt 
@@ -102,7 +102,7 @@
             foreach ( $resul as $value) {
 ?>
                 <tr>
-                    <td><?php echo strftime("%d-%m-%Y",strtotime($value['fecha_cita'])); ?></td>
+                    <td><?php echo strftime("%Y-%m-%d",strtotime($value['fecha_cita'])); ?></td>
                     <td>
                             <?php
                                 if ($value['estatus'] == 0) {

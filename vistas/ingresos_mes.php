@@ -14,11 +14,13 @@ $fecha->modify('last day of this month');
 $last_day = $fecha->format('Y-m-d');
  $i = 1;
  $total = 0;
-$sql="SELECT  * FROM  cita_cnslt "
-        . "INNER JOIN pacnt_cnslt "
-        . "ON (cita_cnslt.ci_pacnt_cita = pacnt_cnslt.ci_pacnt) "
-        . "Where fecha_cita  BETWEEN '$first_day'  AND '$last_day' AND estatus = '1'"
-        . "and mot_cod <> 4";
+$sql="SELECT  * FROM  cita_cnslt 
+        INNER JOIN pacnt_cnslt 
+        ON (cita_cnslt.ci_pacnt_cita = pacnt_cnslt.ci_pacnt) 
+        INNER JOIN motivo 
+        ON (motivo.mot_cod = cita_cnslt.mot_cod) 
+        Where fecha_cita  BETWEEN '$first_day'  AND '$last_day' AND estatus = '1'
+        and motivo.mot_cod <> 4";
 $conectando = new Conection();
 
 $query = pg_query($conectando->conectar(), $sql) or die('ERROR AL INSERTAR DATOS: ' . pg_last_error());
@@ -61,7 +63,7 @@ if( pg_num_rows($query) > 0 ){
             <td><?php echo strftime("%d-%m-%Y",strtotime($value['fecha_cita'])); ?></td>
             <td><?php echo $value['nom_pacnt']; ?> <?php echo $value['apel_pacnt']; ?></td>
             <td><?php echo $value['ci_pacnt']; ?></td>    
-            <td><?php echo $value['motivo_cita']; ?></td>
+            <td><?php echo $value['mot_des']; ?></td>
             <td><?php echo $value['acmp_cita']; ?></td>
             <td><?php echo number_format($value['pago_cita'],2,'.',','); $total = $total + $value['pago_cita']; ?></td>
     </tr>  
