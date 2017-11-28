@@ -34,8 +34,7 @@
         <h4 class="modal-title">HISTORIA CLINICA</h4>
       </div>
       <div class="modal-body" id="modal_body_cita">
-            <br>
-             <div class="row">
+          <div class="row">
                     <div class="col-md-6">
                         <label for="">Enfermedad actual</label>
                       <select class="form-control"  name="enf_cod" id="enf_cod" style="width:250px" required>
@@ -55,55 +54,52 @@
                     </div>
                 </div>
                 <br>
+               
+          <br>
+            <div class="row">
+                <div class="col-md-6">
+                    PA<input name="pa" width="10px" id="enf_nom" class="form-control" type="number" autofocus>
+                    FC<input name="pa" id="enf_nom" class="form-control" type="number" >
+                </div>
+                <div class="col-md-6">
+                    EF<input name="pa" id="enf_nom" class="form-control" type="number" >
+                    HR<input name="pa" id="enf_nom" class="form-control" type="number" >
+                </div>
+            </div>
+          <br>
                 <div class="row">
                     <div class="col-md-6">
                         <label for="">Diagnósticos</label>
                         <textarea name="diagnostico" id="diagnostico" class="form-control" placeholder=""></textarea>
                     </div>
+                     <div class="col-md-6">
+                        <label for="">Tratamiento</label>
+                        <textarea name="tratamiento" id="tratamiento" class="form-control" placeholder=""></textarea>
+                    </div>
                 </div><br>
+               
                 <div class="row">
                     <div class="col-md-6">
+                        <label for="">Plan</label>
+                        <textarea name="plan" id="plan" class="form-control" placeholder=""></textarea>
+                    </div>
+                     <div class="col-md-6">
                         <label for="">Comentarios</label>
                         <textarea name="comentarios" id="comentarios" class="form-control" placeholder=""></textarea>
                     </div>
                 </div><br>
-                <fieldset>
-                  <legend>Antecedentes</legend>
-                  <div class="row">
+            
+                <h4 class="modal-title">EXAMENES</h4>
+                <div class="row">
                     <div class="col-md-6">
-                        <label for="">Personales</label>
-                        <textarea name="antecedentes_personales" id="antecedentes_personales" class="form-control" placeholder="Niega alergia a medicamentos, Diabetes"></textarea>
+                     <input type="checkbox" id="radiografia" value=""><label for="cbox2">Radiografia</label><br>
+                     <input type="checkbox" id="radiografia" value=""><label for="cbox2">Ecografia</label><br>
+                     <input type="checkbox" id="radiografia" value=""><label for="cbox2">Analisis de Sangre</label><br>
+                     <input type="checkbox" id="radiografia" value=""><label for="cbox2">Analisis de Orina</label><br>
+                     <input type="checkbox" id="tomografia" value=""><label for="cbox2">Tomografia</label>   
                     </div>
-                  </div><br>
-
-                  <div class="row">
-                    <div class="col-md-6">
-                        <label for="">Quirúrgicos</label>
-                        <textarea name="antecedentes_quirurgicos" id="antecedentes_quirurgicos" class="form-control" placeholder=""></textarea>
-                    </div>
-                  </div><br>
-
-                  <div class="row">
-                    <div class="col-md-6">
-                        <label for="">Familiares</label>
-                        <textarea name="antecedentes_familiares" id="antecedentes_familiares" class="form-control" placeholder=""></textarea>
-                    </div>
-                  </div>
-                </fieldset>
-                  <br>
-                <fieldset>
-                  <legend>Hábitos Psicobiológicos</legend>
+                </div>
                 
-                  <div class="row">
-                    <div class="col-md-6">
-                        <label for="">Hábitos</label>
-                        <textarea name="habitos" id="habitos" class="form-control" placeholder=""></textarea>
-                    </div>
-                  </div>
-                </fieldset>  
-                
-         
-          
       </div>
       <div class="modal-footer">
         <input type="hidden" name="id_cita" id="id_cita">

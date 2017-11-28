@@ -9,7 +9,7 @@
     include_once('script.php');
     $date = date('Y-m-d');
     ini_set('display_errors', 'on');  //muestra los errores de php
-    $buscarCitas="SELECT * FROM  pacnt_cnslt";
+    $buscarCitas="SELECT *,id_pacnt as ficha FROM  pacnt_cnslt";
 	$conectando = new Conection();
     $i = 1;
 	$listaCitas = pg_query($conectando->conectar(), $buscarCitas) or die('ERROR AL BUSCAR DATOS: ' . pg_last_error());
@@ -20,7 +20,7 @@
         <div class="row">
             <div class="col col-md-6">
                 <a href="pacientes.php" class="btn btn-primary">
-                    <i class="icon-plus-sign" ></i>  Registrar Paciente
+                    <i class="icon-plus-sign" ></i>  Registrar Ficha de Paciente
                 </a>
                 
             </div>                                                    
@@ -31,7 +31,7 @@
             <tr>
                 <th>#</th>
                 <th>Nombre</th>
-               
+               <th>Ficha Número</th>
                 <th>Cedula</th>
                 <th>Telefono</th>
                 <th>Acciones</th>
@@ -47,7 +47,7 @@
                 <tr>
                     <td><?php echo $i++; ?></td>
                     <td><?php echo $value['nom_pacnt']; ?> <?php echo $value['apel_pacnt']; ?></td>
-                   
+                   <td><?php echo $value['ficha']; ?></td>
                     <td><?php echo $value['ci_pacnt']; ?></td>
                     <td><?php echo $value['cod_tlf_pacnt'].'-'. $value['tlf_pacnt']; ?></td>
                     <td>
@@ -60,7 +60,7 @@
                                 ?>
 
                             <a href="hist.php?id_paciente=<?php echo $value['id_pacnt'];?>" class="btn btn-success"  title="Historia"><i class="icon-list-alt"></i></a>
-                            <a href="histCita_Odonto.php?id_paciente=<?php echo $value['id_pacnt'];?>" class="btn btn-success"  title="Historia Odontológica"><i class="icon-bar-chart"></i></a>
+                            <!--a href="histCita_Odonto.php?id_paciente=<?php echo $value['id_pacnt'];?>" class="btn btn-success"  title="Historia Odontológica"><i class="icon-bar-chart"></i></a-->
                             <!-- <a href="../control/delete_paciente.php?id_paciente=<?php echo $value['id_pacnt'];?>" class="btn btn-danger" title="Eliminar" onclick="if(confirm('&iquest;Esta seguro que desea Eliminar al paciente?')) return true;  else return false;"><i class="icon-trash"></i></a> -->
                                                 
                         <?php

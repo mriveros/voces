@@ -31,13 +31,13 @@
 
                 <div class="col-md-2"></div><!--primera columna de centrado-->
                 <div id="miPagina" class="col-md-7 column"><!--segunda columna de centrado-->
-                    <h2 align="center">Modificar Pacientes</h2></br></br>
+                    <h2 align="center">Modificar Ficha Clínica de Pacientes</h2></br></br>
                      
                     <hr>
                     <form method="POST" id="form_paciente_2" action="../control/upd_paciente.php" autocomplete="off">
                        
                             <div class="field-box">
-                                <label>Cedula Paciente:</label>
+                                <label>Cédula Paciente:</label>
                                 <div class="col-md-7">
                                      <input value="<?php echo $paciente['ci_pacnt']; ?>" name="ci_pacnt" id="ci_pacnt" class="form-control" required type="text"  placeholder="12345678" autofocus>
                                 </div>                            
@@ -86,7 +86,7 @@
                             </div>
 
                             <div class="field-box">
-                                <label>Direccion:</label>
+                                <label>Dirección:</label>
                                 <div class="col-md-7">
                                     <input type="text" name="dir_pacnt" value="<?php echo $paciente['dir_pacnt']; ?>" id="dir_pacnt" class="form-control" placeholder="Ingrese Aqui" required>
                                 </div>
@@ -101,7 +101,7 @@
                             </div>
 
                             <div class="field-box">
-                                    <label>Num Telefono:</label>
+                                    <label>Num Teléfono:</label>
                                     <div class="col-md-2">
                                         <select name="cod_tlf_pacnt" id="cod_tlf_pacnt" class="form-control">
                                             <option value="0961" <?php if($paciente['cod_tlf_pacnt'] == "0961"){ echo "selected";} ?>>0961</option>
@@ -133,7 +133,42 @@
                                             <input type="number" name="tlf_pacnt" value="<?php echo $paciente['tlf_pacnt'];?>" id="tlf_pacnt" class="form-control" placeholder="Ingrese Aqui" required>
                                     </div>
                             </div>
-                            
+                             <div><h4 align="center">FICHA CLINICA</h4><br></div>                    
+                <fieldset>
+                  <legend>Antecedentes</legend>
+                  <div class="row">
+                    <div class="col-md-6">
+                        <label for="">Personales</label>
+                        <textarea name="antecedentes_personales" text="<?php echo $paciente['antecedentes_personales']; ?>" id="antecedentes_personales" class="form-control" ><?php echo $paciente['antecedentes_personales']; ?></textarea>
+                    </div>
+                       <div class="col-md-6">
+                        <label for="">Quirúrgicos</label>
+                        <textarea name="antecedentes_quirurgicos" value="<?php echo $paciente['antecedentes_quirurgicos']; ?>" id="antecedentes_quirurgicos" class="form-control" placeholder=""><?php echo $paciente['antecedentes_quirurgicos']; ?></textarea>
+                    </div>
+                  </div><br>
+                   <div class="row">
+                    <div class="col-md-6">
+                        <label for="">Familiares</label>
+                        <textarea name="antecedentes_familiares" value="<?php echo $paciente['antecedentes_familiares']; ?>" id="antecedentes_familiares" class="form-control" placeholder=""><?php echo $paciente['antecedentes_familiares']; ?></textarea>
+                    </div>
+                       <div class="col-md-6">
+                        <label for="">Otros</label>
+                        <textarea name="antecedentes_otros" value="<?php echo $paciente['antecedentes_otros']; ?>" id="antecedentes_otros" class="form-control" placeholder=""><?php echo $paciente['antecedentes_otros']; ?></textarea>
+                    </div>
+                  </div>
+                </fieldset>
+                  <br>
+                <fieldset>
+                  <legend>Hábitos Psicobiológicos</legend>
+                
+                  <div class="row">
+                    <div class="col-md-6">
+                        <label for="">Hábitos</label>
+                        <textarea name="habitos" id="habitos" value="<?php echo $paciente['habitos']; ?>" class="form-control" placeholder=""><?php echo $paciente['habitos']; ?></textarea>
+                    </div>
+                  </div>
+                </fieldset>
+                <br> <br>
                             <div class="action">
                                 <input type="hidden" name="id_pacnt" value="<?php echo $paciente['id_pacnt']; ?>">
                                 <input type="submit"  class="btn btn-primary" id="editar" value="Editar" >
@@ -178,7 +213,7 @@ $(document).ready(function() {
                             required: true,
                     },
                     mail_pacnt : {
-                            required: true,
+                            required: false,
                             email: true
                     },
                     tlf_pacnt : {

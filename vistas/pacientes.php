@@ -27,13 +27,13 @@
 
                 <div class="col-md-2"></div><!--primera columna de centrado-->
                 <div id="miPagina" class="col-md-7 column"><!--segunda columna de centrado-->
-					<h2 align="center">Registrar Pacientes</h2></br></br>
+					<h2 align="center">Registrar Nueva Ficha Clínica de Pacientes</h2></br></br>
 
                     <!---->
                      
     
                         <div class="field-box">
-                            <label>Cedula:</label>
+                            <label>Cédula:</label>
                             <div class="col-md-7">
                                 <input name="ci_pacnt" id="ci_pacnt" class="form-control" required type="number" min="00000000" max="90000000" placeholder="12345678" autofocus>
                             </div>        

@@ -15,7 +15,7 @@ $localizarPersona=pg_num_rows($verificaPersona);
         $ATRIBUTO=pg_fetch_array($verificaPersona);
 ?>
        <div class="row">
-        <div class="col-md-7"> <b class="text-info">Registrando Nuevo Paciente</b></div>
+        <div class="col-md-7"> <b class="text-info">Registrando Nueva Ficha de Paciente</b></div>
          </div> <hr>
 
 
@@ -62,7 +62,7 @@ $localizarPersona=pg_num_rows($verificaPersona);
                         </div>
 
                         <div class="field-box">
-                            <label>Direccion:</label>
+                            <label>Dirección:</label>
                             <div class="col-md-7">
                                 <input title="Direccion del Paciente" type="text" name="dir_pacnt" id="dir_pacnt" class="form-control" placeholder="Ingrese Aqui" required>
                             </div>
@@ -77,7 +77,7 @@ $localizarPersona=pg_num_rows($verificaPersona);
 
                         
                         <div class="field-box">
-                            <label>Num Telefono:</label>
+                            <label>Num Teléfono:</label>
                             <div class="col-md-2">
                                 <select name="cod_tlf_pacnt" id="cod_tlf_pacnt" class="form-control">
                                     <option value="0961">0961</option>
@@ -110,9 +110,43 @@ $localizarPersona=pg_num_rows($verificaPersona);
                                 <input type="number" name="tlf_pacnt" id="tlf_pacnt" class="form-control" placeholder="Ingrese Aqui" required>
                             
                             </div>
-                        </div>
-                       
-                        
+                        </div>    
+                 <div><h4 align="center">FICHA CLINICA</h4><br></div>                    
+                <fieldset>
+                  <legend>Antecedentes</legend>
+                  <div class="row">
+                    <div class="col-md-6">
+                        <label for="">Personales</label>
+                        <textarea name="antecedentes_personales" id="antecedentes_personales" class="form-control" ></textarea>
+                    </div>
+                       <div class="col-md-6">
+                        <label for="">Quirúrgicos</label>
+                        <textarea name="antecedentes_quirurgicos" id="antecedentes_quirurgicos" class="form-control" placeholder=""></textarea>
+                    </div>
+                  </div><br>
+                   <div class="row">
+                    <div class="col-md-6">
+                        <label for="">Familiares</label>
+                        <textarea name="antecedentes_familiares" id="antecedentes_familiares" class="form-control" placeholder=""></textarea>
+                    </div>
+                       <div class="col-md-6">
+                        <label for="">Otros</label>
+                        <textarea name="antecedentes_otros" id="antecedentes_otros" class="form-control" placeholder=""></textarea>
+                    </div>
+                  </div>
+                </fieldset>
+                  <br>
+                <fieldset>
+                  <legend>Hábitos Psicobiológicos</legend>
+                
+                  <div class="row">
+                    <div class="col-md-6">
+                        <label for="">Hábitos</label>
+                        <textarea name="habitos" id="habitos" class="form-control" placeholder=""></textarea>
+                    </div>
+                  </div>
+                </fieldset>
+                <br> <br>             
                         <div class="action">
                             <input type="submit"  class="btn btn-primary" id="registrar" value="Registrar" >
                             
@@ -144,7 +178,7 @@ $(document).ready(function() {
                             required: true,
                     },
                     mail_pacnt : {
-                            required: true,
+                            required: false,
                             email: true
                     },
                     tlf_pacnt : {

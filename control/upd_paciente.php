@@ -13,8 +13,19 @@ $mail_pacnt		= $_POST['mail_pacnt'];
 $tlf_pacnt		= $_POST['tlf_pacnt'];
 $id_pacnt       = $_POST['id_pacnt'];
 $cod_tlf_pacnt = $_POST['cod_tlf_pacnt'];
+$antecedentes_personales    = $_POST['antecedentes_personales'];
+$antecedentes_quirurgicos   = $_POST['antecedentes_quirurgicos'];
+$antecedentes_familiares    = $_POST['antecedentes_familiares'];
+$antecedentes_otros 	= $_POST['antecedentes_otros'];
+$habitos		= $_POST['habitos'];
 
-$modificar="UPDATE pacnt_cnslt SET nom_pacnt = '$nom_pacnt', apel_pacnt = '$apel_pacnt', fn_pacnt = '$fn_pacnt', dir_pacnt = '$dir_pacnt', mail_pacnt = '$mail_pacnt', tlf_pacnt = '$tlf_pacnt' , cod_tlf_pacnt = '$cod_tlf_pacnt'  WHERE ci_pacnt = $ci_pacnt";
+$modificar="UPDATE pacnt_cnslt SET nom_pacnt = '$nom_pacnt',
+        apel_pacnt = '$apel_pacnt', fn_pacnt = '$fn_pacnt',
+        dir_pacnt = '$dir_pacnt', mail_pacnt = '$mail_pacnt', tlf_pacnt = '$tlf_pacnt' ,
+        cod_tlf_pacnt = '$cod_tlf_pacnt',antecedentes_personales='$antecedentes_personales',
+        antecedentes_quirurgicos='$antecedentes_quirurgicos',
+        antecedentes_familiares='$antecedentes_familiares', antecedentes_otros='$antecedentes_otros', 
+        habitos='$habitos' WHERE ci_pacnt = $ci_pacnt";
 
 $conectando = new Conection();
 

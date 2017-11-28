@@ -13,7 +13,12 @@
         include_once('script.php');
         ini_set('display_errors', 'on');  //muestra los errores de php
         $id_paciente = $_GET['id_paciente'];
-        $buscarPersonas="SELECT * FROM pacnt_cnslt INNER JOIN cita_cnslt ON cita_cnslt.ci_pacnt_cita =  pacnt_cnslt.ci_pacnt INNER JOIN motivo ON cita_cnslt.mot_cod=motivo.mot_cod INNER JOIN hist_pacnt ON hist_pacnt.id_cita =  cita_cnslt.id_cita WHERE id_pacnt = $id_paciente";
+        $buscarPersonas="SELECT * FROM pacnt_cnslt 
+        INNER JOIN cita_cnslt ON cita_cnslt.ci_pacnt_cita =  pacnt_cnslt.ci_pacnt 
+        INNER JOIN motivo ON cita_cnslt.mot_cod=motivo.mot_cod 
+        INNER JOIN hist_pacnt ON hist_pacnt.id_cita =  cita_cnslt.id_cita 
+        INNER JOIN enfermedad ON enfermedad.enf_cod =  hist_pacnt.enf_cod 
+        WHERE id_pacnt = $id_paciente";
         $conectando = new Conection();
         $query=pg_query($conectando->conectar(), $buscarPersonas) or die('ERROR AL BUSCAR DATOS: ' . pg_last_error());
         $result=pg_fetch_all($query);
@@ -71,7 +76,7 @@
                                                 </tr>
 
                                                 <tr>
-                                                    <td colspan="4" ><strong>Enfermedad actual:</strong> <?php echo $value['enfermedad_actual']; ?> </td>
+                                                    <td colspan="4" ><strong>Enfermedad actual:</strong> <?php echo $value['enf_nom']; ?> </td>
                                                 </tr>
                                                 <tr>
                                                     <td colspan="4" align="center"><strong>Antecedentes</strong></td>

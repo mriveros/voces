@@ -14,6 +14,11 @@ $dir_pacnt		= $_POST['dir_pacnt'];
 $mail_pacnt		= $_POST['mail_pacnt'];
 $cod_tlf_pacnt	= $_POST['cod_tlf_pacnt'];
 $tlf_pacnt		= $_POST['tlf_pacnt'];
+$antecedentes_personales    = $_POST['antecedentes_personales'];
+$antecedentes_quirurgicos   = $_POST['antecedentes_quirurgicos'];
+$antecedentes_familiares    = $_POST['antecedentes_familiares'];
+$antecedentes_otros 	= $_POST['antecedentes_otros'];
+$habitos		= $_POST['habitos'];
 
 
 $comparar="SELECT * FROM pacnt_cnslt WHERE ci_pacnt = '$ci_pacnt'";
@@ -26,8 +31,10 @@ $localizar=pg_num_rows($verifica);
 	if ($localizar==0) {
 
 
-		$INSERTAR=pg_query($conectando->conectar(), "INSERT INTO pacnt_cnslt (ci_pacnt, nom_pacnt, apel_pacnt, fn_pacnt, dir_pacnt, mail_pacnt, tlf_pacnt, sexo_pacnt,cod_tlf_pacnt,status)
-		VALUES ('$ci_pacnt', '$nom_pacnt', '$apel_pacnt', '$fn_pacnt', '$dir_pacnt', '$mail_pacnt', '$tlf_pacnt', '$sexo_pacnt','$cod_tlf_pacnt','1')");	
+		$INSERTAR=pg_query($conectando->conectar(), "INSERT INTO pacnt_cnslt 
+                (ci_pacnt, nom_pacnt, apel_pacnt, fn_pacnt, dir_pacnt, mail_pacnt, tlf_pacnt, sexo_pacnt,cod_tlf_pacnt,status,antecedentes_personales,antecedentes_quirurgicos,antecedentes_familiares,antecedentes_otros,habitos)
+		VALUES ('$ci_pacnt', '$nom_pacnt', '$apel_pacnt', '$fn_pacnt', '$dir_pacnt',
+                '$mail_pacnt', '$tlf_pacnt', '$sexo_pacnt','$cod_tlf_pacnt','1','$antecedentes_personales','$antecedentes_quirurgicos','$antecedentes_familiares','$antecedentes_otros','$habitos')");	
 
 		if (!$INSERTAR) { 
 		    print ("<script>alert('El paciente no pudo ser registrado');</script>");
