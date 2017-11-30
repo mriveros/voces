@@ -31,7 +31,7 @@
       <form action="terminar_cita.php" method="post" accept-charset="utf-8">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">HISTORIA CLINICA</h4>
+        <h4 class="modal-title">NUEVA HISTORIA CLINICA</h4>
       </div>
       <div class="modal-body" id="modal_body_cita">
           <div class="row">

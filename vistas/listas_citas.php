@@ -128,6 +128,7 @@
                               if ($_SESSION['tipo'] == 1 or $_SESSION['tipo'] == 3) {
                               ?>
                             <a id="verificar_cita" name="verificar_cita" href="#" class="btn btn-success verificar"  title="Verificar"  data-idcita="<?php echo $value['id_cita']; ?>" data-idpacnt="<?php echo $value['id_pacnt']; ?>" ><i class="icon-check"></i></a>
+                           
                             <!--Verificar si es un odontologo Desplegar el modulo de Odontologia-->
                                     <?php 
                                       if ($especialidad== "Odontología") {
