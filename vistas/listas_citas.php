@@ -24,7 +24,7 @@
     ini_set('display_errors', 'on');  //muestra los errores de php
     if  ($user_tipo==1 or $user_tipo==2){
     $buscarCitas="SELECT * FROM  cita_cnslt INNER JOIN pacnt_cnslt 
-    ON (cita_cnslt.ci_pacnt_cita = pacnt_cnslt.ci_pacnt) 
+    ON (cita_cnslt.pac_cod = pacnt_cnslt.id_pacnt) 
     INNER JOIN motivo 
     ON (motivo.mot_cod = cita_cnslt.mot_cod)
     INNER JOIN medic_cnslt 
@@ -32,7 +32,7 @@
     WHERE fecha_cita='$date'  order by estatus asc";
     }else 
     $buscarCitas="SELECT * FROM  cita_cnslt INNER JOIN pacnt_cnslt 
-    ON (cita_cnslt.ci_pacnt_cita = pacnt_cnslt.ci_pacnt) 
+    ON (cita_cnslt.pac_cod = pacnt_cnslt.id_pacnt) 
     INNER JOIN motivo 
     ON (motivo.mot_cod = cita_cnslt.mot_cod)
     INNER JOIN medic_cnslt 
@@ -127,7 +127,7 @@
                               <?php 
                               if ($_SESSION['tipo'] == 1 or $_SESSION['tipo'] == 3) {
                               ?>
-                            <a id="verificar_cita" name="verificar_cita" href="#" class="btn btn-success verificar"  title="Verificar"  data-idcita="<?php echo $value['id_cita']; ?>" data-cipacnt="<?php echo $value['ci_pacnt']; ?>" ><i class="icon-check"></i></a>
+                            <a id="verificar_cita" name="verificar_cita" href="#" class="btn btn-success verificar"  title="Verificar"  data-idcita="<?php echo $value['id_cita']; ?>" data-idpacnt="<?php echo $value['id_pacnt']; ?>" ><i class="icon-check"></i></a>
                             <!--Verificar si es un odontologo Desplegar el modulo de Odontologia-->
                                     <?php 
                                       if ($especialidad== "Odontología") {
@@ -198,7 +198,7 @@ include_once('modal.php');
                                 $(".verificaras").click(function(e) {
                                     e.preventDefault();
                                     $("#id_cita").val($(this).data('idcita'));
-                                    $("#ci_pacnt").val($(this).data('cipacnt'));
+                                    $("#id_pacnt").val($(this).data('idpacnt'));
                                     $("#modal_hitoria").modal();
                                 });
                             }
@@ -211,14 +211,14 @@ include_once('modal.php');
     $(".verificar").click(function(e) {
          e.preventDefault();
         $("#id_cita").val($(this).data('idcita'));
-        $("#ci_pacnt").val($(this).data('cipacnt'));
+        $("#id_pacnt").val($(this).data('idpacnt'));
         $("#modal_hitoria").modal();
     });
     
     $(".verificarOdonto").click(function(e) {
          e.preventDefault();
         $("#id_cita").val($(this).data('idcita'));
-        $("#ci_pacnt").val($(this).data('cipacnt'));
+        $("#id_pacnt").val($(this).data('idpacnt'));
         $("#modal_hitoria_odonto").modal();
     });
 

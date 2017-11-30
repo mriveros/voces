@@ -41,12 +41,12 @@ function Header()
 	$this->SetLineWidth(.2);
 	$this->Line(200,40,10,40);//largor,ubicacion derecha,inicio,ubicacion izquierda
     //------------------------RECIBIMOS LOS VALORES DE POST-----------
-    if  (empty($_POST['pac_cedula'])){$pac_cedula='';}else{ $pac_cedula= $_POST['pac_cedula'];}
+    if  (empty($_POST['id_pacnt'])){$pac_cedula='';}else{ $pac_cedula= $_POST['id_pacnt'];}
     if  (empty($_POST['desde_fecha'])){$desde='';}else{ $desde= $_POST['desde_fecha'];}
     if  (empty($_POST['hasta_fecha'])){$hasta='';}else{ $hasta= $_POST['hasta_fecha'];}
     $conectate=pg_connect("host=localhost port=5432 dbname=consulta user=postgres password="
                     . "")or die ('Error al conectar a la base de datos');
-$consulta=pg_exec($conectate,"Select pac.id_pacnt, pac.nom_pacnt || ' ' || pac.apel_pacnt as nombres from pacnt_cnslt pac where pac.ci_pacnt =$pac_cedula");
+$consulta=pg_exec($conectate,"Select pac.id_pacnt, pac.nom_pacnt || ' ' || pac.apel_pacnt as nombres from pacnt_cnslt pac where pac.id_pacnt =$pac_cedula");
 $nombres =pg_result($consulta,0,'nombres');
     //table header CABECERA        
     $this->SetFont('Arial','B',12);
@@ -61,7 +61,7 @@ $nombres =pg_result($consulta,0,'nombres');
 $pdf= new PDF();//'P'=vertical o 'L'=horizontal,'mm','A4' o 'Legal'
 $pdf->AddPage();
 //------------------------RECIBIMOS LOS VALORES DE POST-----------
-   if  (empty($_POST['pac_cedula'])){$pac_cedula='';}else{ $pac_cedula= $_POST['pac_cedula'];}
+   if  (empty($_POST['id_pacnt'])){$pac_cedula='';}else{ $pac_cedula= $_POST['id_pacnt'];}
    if  (empty($_POST['desde_fecha'])){$desde='';}else{ $desde= $_POST['desde_fecha'];}
    if  (empty($_POST['hasta_fecha'])){$hasta='';}else{ $hasta= $_POST['hasta_fecha'];}
    $desde= date("Y-m-d", strtotime($desde));
@@ -95,11 +95,11 @@ hp.enf_cod
 from hist_pacnt hp, cita_cnslt cc, enfermedad enf, pacnt_cnslt pac, cita_cnslt cit
 where hp.id_cita = cc.id_cita 
 and hp.enf_cod= enf.enf_cod
-and pac.ci_pacnt=hp.ci_pacnt_hist
+and pac.id_pacnt=hp.pac_cod
 and hp.id_cita=cit.id_cita
 and cc.fecha_cita >= '$desde'
 and cc.fecha_cita <= '$hasta'
-and pac.ci_pacnt =$pac_cedula");
+and pac.id_pacnt =$pac_cedula");
 $numregs=pg_numrows($consulta);
 while($i<$numregs)
 {   

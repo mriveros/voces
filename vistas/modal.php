@@ -58,12 +58,12 @@
           <br>
             <div class="row">
                 <div class="col-md-6">
-                    PA<input name="pa" width="10px" id="enf_nom" class="form-control" type="number" autofocus>
-                    FC<input name="pa" id="enf_nom" class="form-control" type="number" >
+                    PA<input name="pa" width="10px" id="pa" class="form-control" type="number" autofocus>
+                    FC<input name="fc" id="fc" class="form-control" type="number" >
                 </div>
                 <div class="col-md-6">
-                    EF<input name="pa" id="enf_nom" class="form-control" type="number" >
-                    HR<input name="pa" id="enf_nom" class="form-control" type="number" >
+                    EF<input name="ef" id="ef" class="form-control" type="number" >
+                    HR<input name="hr" id="hr" class="form-control" type="number" >
                 </div>
             </div>
           <br>
@@ -93,9 +93,9 @@
                 <div class="row">
                     <div class="col-md-6">
                      <input type="checkbox" id="radiografia" value=""><label for="cbox2">Radiografia</label><br>
-                     <input type="checkbox" id="radiografia" value=""><label for="cbox2">Ecografia</label><br>
-                     <input type="checkbox" id="radiografia" value=""><label for="cbox2">Analisis de Sangre</label><br>
-                     <input type="checkbox" id="radiografia" value=""><label for="cbox2">Analisis de Orina</label><br>
+                     <input type="checkbox" id="ecografia" value=""><label for="cbox2">Ecografia</label><br>
+                     <input type="checkbox" id="analisissangre" value=""><label for="cbox2">Analisis de Sangre</label><br>
+                     <input type="checkbox" id="analisisorina" value=""><label for="cbox2">Analisis de Orina</label><br>
                      <input type="checkbox" id="tomografia" value=""><label for="cbox2">Tomografia</label>   
                     </div>
                 </div>
@@ -103,7 +103,7 @@
       </div>
       <div class="modal-footer">
         <input type="hidden" name="id_cita" id="id_cita">
-        <input type="hidden" name="ci_pacnt" id="ci_pacnt" value="">
+        <input type="hidden" name="id_pacnt" id="id_pacnt" value="">
         <input type="submit" name="" class="btn btn-primary" value="Guardar">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
       </div>

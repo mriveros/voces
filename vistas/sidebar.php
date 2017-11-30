@@ -145,7 +145,7 @@
                     <i class="icon-chevron-down"></i><!--flecha-->
                 </a> <!--fin class ="dropdown-toggle"-->
                 <ul class="submenu">
-                    <li><a href="reportes_historiales_citas.php" >Historia Médica</a></li>
+                    <li><a href="reporte_enfermedad_historial.php" >Historiales Enfermedades-Seguimientos</a></li>
                     <li><a href="rep_estadisticas_enfermedades.php" >Estadísticas Enfermedades</a></li>
                     <li><a href="reportes_historiales.php" >Historiales - Paciente</a></li>
                     <li><a href="reportes_enfermedades.php" >Reportes de Enfermedades</a></li>

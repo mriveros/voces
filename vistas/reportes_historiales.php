@@ -27,11 +27,11 @@
                 <div class="field-box">
             	<label >Reporte por Pacientes:</label>
                     <label class="select">
-	               <select class="form-control" name="pac_cedula" id="pac_cedula" required >
+	               <select class="form-control" name="id_pacnt" id="id_pacnt" required >
                                     <option value="">Seleccione</option>
                                     <?php
                                         foreach ($pacientes as $paciente) {
-                                            echo '<option value="'.$paciente['ci_pacnt'].'">'.$paciente['ci_pacnt'].'</option>';
+                                            echo '<option value="'.$paciente['id_pacnt'].'">'.$paciente['nom_pacnt'].' '.$paciente['apel_pacnt'].'</option>';
                                         }
                                     ?>                               
                                 </select>
@@ -93,14 +93,14 @@
 		$("#button_reporte").click(function (e) {
 			var desde = $("#desde_fecha").val();
                         var hasta = $("#hasta_fecha").val();
-                        var paciente = $("#pac_cedula").val();
+                        var paciente = $("#id_pacnt").val();
 			if (desde == "" || hasta =="") {
 				alert("Selecione un rango de fechas");
             	$("#desde_fecha").focus();
 			}
                         if (paciente == ""){
                             alert("Selecione un Paciente");
-                            $("#pac_cedula").focus();
+                            $("#id_pacnt").focus();
                         }
 		});
 	});

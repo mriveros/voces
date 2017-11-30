@@ -6,7 +6,7 @@ $CONEXION=pg_connect($CONECTAR);
 $id_paciente = $_GET['id_paciente'];
 
 $sql= "SELECT * FROM pacnt_cnslt pac
-INNER JOIN cita_cnslt cc ON cc.ci_pacnt_cita =  pac.ci_pacnt 
+INNER JOIN cita_cnslt cc ON cc.pac_cod =  pac.id_pacnt 
 INNER JOIN motivo mot ON cc.mot_cod=mot.mot_cod
 INNER JOIN hist_pacnt hp ON hp.id_cita =  cc.id_cita
 INNER JOIN enfermedad enf ON hp.enf_cod=enf.enf_cod  WHERE pac.id_pacnt = $id_paciente";
@@ -29,6 +29,28 @@ $html= '
                                     <tr>
                                         <td colspan="4"><strong>Dirección:</strong>'.$result[0]['dir_pacnt'].'</td>
                                     </tr>
+                                     <tr>
+                                                    <td colspan="4" align="center"><strong>Antecedentes</strong></td>
+                                    </tr>
+                                    <tr>
+                                               <td colspan="4" ><strong>Personales:</strong> '.$result[0]['antecedentes_personales'].'</td>
+                                                </tr> 
+                                                <tr>
+                                                    <td colspan="4" ><strong>Quirúrgicos:</strong> '.$result[0]['antecedentes_quirurgicos'].'</td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="4" ><strong>Familiares:</strong> '.$result[0]['antecedentes_familiares'].'</td>
+                                                </tr>
+                                                 <tr>
+                                                    <td colspan="4" ><strong>Otros:</strong> '.$result[0]['antecedentes_otros'].'</td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="4" align="center"><strong>Hábitos Psicobiológicos</strong></td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="4" > '.$result[0]['habitos'].'</td>
+                                                </tr>
+                                                
                                 </tbody>
                             </table>
 ';
@@ -50,26 +72,23 @@ $resul = pg_fetch_all($query);
                                                 <tr>
                                                     <td colspan="4" ><strong>Enfermedad actual:</strong> '.$value['enf_nom'].'</td>
                                                 </tr>
-                                                <tr>
-                                                    <td colspan="4" align="center"><strong>Antecedentes</strong></td>
+                                               <tr>
+                                                    <td colspan="4" ><strong>PA:</strong> <?php echo '.$value['pa'].'</td>
+                                                     <td colspan="4" ><strong>FC:</strong> <?php echo '.$value['fc'].'</td>
                                                 </tr>
-                                                <tr>
-                                                    <td colspan="4" ><strong>Personales:</strong> '.$value['antecedentes_personales'].'</td>
-                                                </tr> 
-                                                <tr>
-                                                    <td colspan="4" ><strong>Quirúrgicos:</strong> '.$value['antecedentes_quirurgicos'].'</td>
-                                                </tr>
-                                                <tr>
-                                                    <td colspan="4" ><strong>Familiares:</strong> '.$value['antecedentes_familiares'].'</td>
-                                                </tr>
-                                                <tr>
-                                                    <td colspan="4" align="center"><strong>Hábitos Psicobiológicos</strong></td>
-                                                </tr>
-                                                <tr>
-                                                    <td colspan="4" > '.$value['habitos'].'</td>
+                                                
+                                                 <tr>
+                                                    <td colspan="4" ><strong>EF:</strong> <?php echo '.$value['ef'].'</td>
+                                                    <td colspan="4" ><strong>HR:</strong> <?php echo '.$value['hr'].'</td>
                                                 </tr>
                                                 <tr>
                                                     <td colspan="4" ><strong>Diagnósticos:</strong> '.$value['diagnostico'].'</td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="4" ><strong>Tratamiento:</strong>  '.$value['tratamiento'].'</td>
+                                                </tr>
+                                                 <tr>
+                                                    <td colspan="4" ><strong>Plan:</strong>  '.$value['plan'].'</td>
                                                 </tr>
                                                 <tr>
                                                     <td colspan="4" ><strong>Comentarios:</strong> '.$value['comentarios'].'</td>

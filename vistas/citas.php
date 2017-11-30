@@ -44,13 +44,13 @@ ini_set('display_errors', 'on');
                      <form method="POST" id="registrar_cita" action="../control/reg_cita.php">
                         
                         <div class="field-box">
-                            <label>Cedula:</label>
+                            <label>Paciente:</label>
                             <div class="col-md-7">                               
-                                <select class="form-control" name="ci_pacnt" id="ci_pacnt" >
+                                <select class="form-control" name="id_pacnt" id="id_pacnt" >
                                     <option value="">Seleccione</option>
                                     <?php
                                         foreach ($pacientes as $paciente) {
-                                            echo '<option value="'.$paciente['ci_pacnt'].'">'.$paciente['ci_pacnt'].'</option>';
+                                            echo '<option value="'.$paciente['id_pacnt'].'">'.$paciente['nom_pacnt'].' '.$paciente['apel_pacnt'].'</option>';
                                         }
                                     ?>                               
                                 </select>

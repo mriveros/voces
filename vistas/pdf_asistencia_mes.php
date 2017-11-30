@@ -9,7 +9,7 @@ $first_day = $fecha->format('Y-m-d');
 $fecha->modify('last day of this month');
 $last_day = $fecha->format('Y-m-d');
 $i = 1;
-$sql="SELECT  * FROM  cita_cnslt INNER JOIN pacnt_cnslt ON (cita_cnslt.ci_pacnt_cita = pacnt_cnslt.ci_pacnt) INNER JOIN motivo mot ON (cita_cnslt.mot_cod = mot.mot_cod)  Where fecha_cita  BETWEEN '$first_day'  AND '$last_day'";
+$sql="SELECT  * FROM  cita_cnslt INNER JOIN pacnt_cnslt ON (cita_cnslt.pac_cod = pacnt_cnslt.id_pacnt) INNER JOIN motivo mot ON (cita_cnslt.mot_cod = mot.mot_cod)  Where fecha_cita  BETWEEN '$first_day'  AND '$last_day'";
 $query = pg_query($CONEXION, $sql) or die('ERROR AL INSERTAR DATOS: ' . pg_last_error());
 
 

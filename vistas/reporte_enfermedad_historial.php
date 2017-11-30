@@ -25,12 +25,12 @@ $query = pg_query($conectando->conectar(), $sql) or die('ERROR AL INSERTAR DATOS
 
   <div class="content">
         <div id="pad-wrapper" class="form-page"> 
-        <h3>Asistencia del Mes</h3><br>
+        <h3>Historiales Enfermedades-Seguimiento</h3><br>
         <div class="row">
             <div class="col col-md-6">
-                <a href="pdf_asistencia_mes.php" id="pdf_asistencia_mes" class="btn btn-primary" <?php echo (pg_num_rows($query) > 0) ? "" : "disabled" ; ?>>
+                <!--a href="pdf_asistencia_mes.php" id="pdf_asistencia_mes" class="btn btn-primary" <?php echo (pg_num_rows($query) > 0) ? "" : "disabled" ; ?>>
                     <i class="icon-download-alt" ></i>  Exportar
-                </a>
+                </a-->
                 
             </div>                                                    
         </div><br><br>

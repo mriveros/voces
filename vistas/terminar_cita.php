@@ -4,16 +4,17 @@ include_once('../config/config.php');
 
 
 $id_cita                  = $_POST['id_cita'];
-$ci_pacnt                 = $_POST['ci_pacnt'];
+$id_pacnt                 = $_POST['id_pacnt'];
 
 $enfermedad_actual        = $_POST['enf_cod'];
 $diagnostico              = $_POST['diagnostico'];
+$tratamiento              = $_POST['tratamiento'];
+$plan                     = $_POST['plan'];
 $comentarios              = $_POST['comentarios'];
-$antecedentes_personales  = $_POST['antecedentes_personales'];
-$antecedentes_quirurgicos = $_POST['antecedentes_quirurgicos'];
-$antecedentes_familiares  = $_POST['antecedentes_familiares'];
-$habitos                  = $_POST['habitos'];
-
+$pa                       = $_POST['pa'];
+$fc                       = $_POST['fc'];
+$ef                       = $_POST['ef'];
+$hr                       = $_POST['hr'];
 $precio = PRECIO_CITA;
 $sql="UPDATE cita_cnslt SET pago_cita = $precio, estatus = '1'  WHERE id_cita = $id_cita";
 
@@ -23,11 +24,11 @@ $query = pg_query($conectando->conectar(), $sql) or die('ERROR AL INSERTAR DATOS
 
 	if (pg_affected_rows($query) > 0) {
 
-		$INSERTAR=pg_query($conectando->conectar(), "INSERT INTO hist_pacnt (enf_cod, diagnostico, comentarios, antecedentes_personales, antecedentes_quirurgicos, antecedentes_familiares, habitos, id_cita, ci_pacnt_hist)
-		VALUES ($enfermedad_actual, '$diagnostico', '$comentarios', '$antecedentes_personales', '$antecedentes_quirurgicos', '$antecedentes_familiares', '$habitos', $id_cita, $ci_pacnt)");	
+		$INSERTAR=pg_query($conectando->conectar(), "INSERT INTO hist_pacnt (enf_cod, diagnostico, tratamiento,plan,comentarios, pa, fc, ef, hr, id_cita, pac_cod)
+		VALUES ($enfermedad_actual, '$diagnostico', '$tratamiento','$plan','$comentarios', $pa, $fc, $ef, $hr, $id_cita, $id_pacnt)");	
 
 		if (!$INSERTAR) { 
-		    print ("<script>alert('Hocurrio un error al Procesar la Operación');</script>");
+		    print ("<script>alert('Ocurrio un error al Procesar la Operación');</script>");
 	    	print('<meta http-equiv="refresh" content="0; URL=../vistas/listas_citas.php">');
 		    }
 

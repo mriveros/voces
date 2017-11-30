@@ -16,7 +16,7 @@
         $buscarPersonas="SELECT * 
         FROM pacnt_cnslt 
         INNER JOIN cita_cnslt 
-        ON cita_cnslt.ci_pacnt_cita =  pacnt_cnslt.ci_pacnt 
+        ON cita_cnslt.pac_cod =  pacnt_cnslt.id_pacnt 
         INNER JOIN motivo ON cita_cnslt.mot_cod=motivo.mot_cod 
         INNER JOIN hist_pacnt ON hist_pacnt.id_cita =  cita_cnslt.id_cita 
         INNER JOIN enfermedad en on en.enf_cod=hist_pacnt.enf_cod
@@ -63,6 +63,27 @@
                                     <tr>
                                         <td colspan="4"><strong>Dirección:</strong> <?php echo $result[0]['dir_pacnt']; ?> </td>
                                     </tr>
+                                    <tr>
+                                                    <td colspan="4" align="center"><strong>Antecedentes</strong></td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="4" ><strong>Personales:</strong> <?php echo $result[0]['antecedentes_personales']; ?></td>
+                                                </tr> 
+                                                <tr>
+                                                    <td colspan="4" ><strong>Quirúrgicos:</strong> <?php echo $result[0]['antecedentes_quirurgicos']; ?></td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="4" ><strong>Familiares:</strong> <?php echo $result[0]['antecedentes_familiares']; ?></td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="4" ><strong>Otros:</strong> <?php echo $result[0]['antecedentes_otros']; ?></td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="4" align="center"><strong>Hábitos Psicobiológicos</strong></td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="4" > <?php echo $result[0]['habitos']; ?></td>
+                                                </tr>
                                 </tbody>
                             </table>
                                     <?php foreach ($result as $value) { ?>
@@ -71,7 +92,7 @@
                                             <tbody>
                                                 <tr>
                                                     <td style="background: #858689;color: #fff;"><strong>N#H:</strong> <?php echo $value['id_his']; ?> </td>
-                                                    <td colspan="3" style="background: #858689;color: #fff;"><strong>Fecha:</strong> <?php echo strftime("%d-%m-%Y",strtotime($value['fecha_cita'])); ?> </td>
+                                                    <td colspan="4" style="background: #858689;color: #fff;"><strong>Fecha:</strong> <?php echo strftime("%d-%m-%Y",strtotime($value['fecha_cita'])); ?> </td>
                                                 </tr>
                                                 <tr>
                                                     <td colspan="4" ><strong>Motivo de consulta:</strong> <?php echo $value['mot_nom']; ?> </td>
@@ -80,28 +101,28 @@
                                                 <tr>
                                                     <td colspan="4" ><strong>Enfermedad actual:</strong> <?php echo $value['enf_nom']; ?> </td>
                                                 </tr>
-                                                <tr>
-                                                    <td colspan="4" align="center"><strong>Antecedentes</strong></td>
+                                                 <tr>
+                                                    <td colspan="4" ><strong>PA:</strong> <?php echo $value['pa']; ?></td>
+                                                     <td colspan="4" ><strong>FC:</strong> <?php echo $value['fc']; ?></td>
                                                 </tr>
-                                                <tr>
-                                                    <td colspan="4" ><strong>Personales:</strong> <?php echo $value['antecedentes_personales']; ?></td>
-                                                </tr> 
-                                                <tr>
-                                                    <td colspan="4" ><strong>Quirúrgicos:</strong> <?php echo $value['antecedentes_quirurgicos']; ?></td>
+                                                
+                                                 <tr>
+                                                    <td colspan="4" ><strong>EF:</strong> <?php echo $value['ef']; ?></td>
+                                                    <td colspan="4" ><strong>HR:</strong> <?php echo $value['hr']; ?></td>
                                                 </tr>
-                                                <tr>
-                                                    <td colspan="4" ><strong>Familiares:</strong> <?php echo $value['antecedentes_familiares']; ?></td>
-                                                </tr>
-                                                <tr>
-                                                    <td colspan="4" align="center"><strong>Hábitos Psicobiológicos</strong></td>
-                                                </tr>
-                                                <tr>
-                                                    <td colspan="4" > <?php echo $value['habitos']; ?></td>
+                                                 <tr>
+                                                    
                                                 </tr>
                                                 <tr>
                                                     <td colspan="4" ><strong>Diagnósticos:</strong> <?php echo $value['diagnostico']; ?></td>
                                                 </tr>
                                                 <tr>
+                                                    <td colspan="4" ><strong>Tratamiento:</strong> <?php echo $value['tratamiento']; ?></td>
+                                                </tr>
+                                                 <tr>
+                                                    <td colspan="4" ><strong>Plan:</strong> <?php echo $value['plan']; ?></td>
+                                                </tr>
+                                                 <tr>
                                                     <td colspan="4" ><strong>Comentarios:</strong> <?php echo $value['comentarios']; ?></td>
                                                 </tr>
                                             </tbody>
