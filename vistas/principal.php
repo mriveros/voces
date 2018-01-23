@@ -13,7 +13,7 @@
         //$buscarCitas="SELECT * FROM  cita_cnslt INNER JOIN pacnt_cnslt ON (cita_cnslt.ci_pacnt_cita = pacnt_cnslt.ci_pacnt) WHERE fecha_cita = '$fecha' AND estatus = '0' ";
         if  ($user_tipo=='1' or $user_tipo=='2'){
             $buscarCitas="SELECT * FROM  cita_cnslt INNER JOIN pacnt_cnslt 
-            ON (cita_cnslt.ci_pacnt_cita = pacnt_cnslt.ci_pacnt) 
+            ON (cita_cnslt.pac_cod = pacnt_cnslt.id_pacnt) 
             INNER JOIN motivo 
             ON (motivo.mot_cod = cita_cnslt.mot_cod)
             INNER JOIN medic_cnslt 
@@ -21,7 +21,7 @@
             WHERE fecha_cita='$fecha'  order by estatus asc";
             }else if ($user_tipo=='3'){
             $buscarCitas="SELECT * FROM  cita_cnslt INNER JOIN pacnt_cnslt 
-            ON (cita_cnslt.ci_pacnt_cita = pacnt_cnslt.ci_pacnt) 
+            ON (cita_cnslt.pac_cod = pacnt_cnslt.id_pacnt) 
             INNER JOIN motivo 
             ON (motivo.mot_cod = cita_cnslt.mot_cod)
             INNER JOIN medic_cnslt 
