@@ -1,4 +1,3 @@
-
 <div id="modal_cita" class="modal fade" role="dialog">
   <div class="modal-dialog modal-Ig">
     <div class="modal-content">
@@ -89,110 +88,10 @@
                     </div>
                 </div><br>
             
-                <h4 class="modal-title">EXAMENES</h4>
-                <div class="row">
-                    <div class="col-md-10">
-                      <div>  Hematologia</div>
-                     <input type="checkbox" id="radiografia" value=""><label for="cbox2">Hemograma/Eritro</label><br>
-                     <input type="checkbox" id="ecografia" value=""><label for="cbox2">Hemograma/Plaquetas</label><br>
-                     <input type="checkbox" id="analisissangre" value=""><label for="cbox2">Frotis de Sangre Periférica</label><br>
-                     <input type="checkbox" id="analisisorina" value=""><label for="cbox2">Coagulograma</label><br>
-                     <input type="checkbox" id="tomografia" value=""><label for="cbox2">TP/INR</label>   
-                     <input type="checkbox" id="tomografia" value=""><label for="cbox2">Tipificación</label>   
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-10">
-                      <div>  Química</div>
-                     <input type="checkbox" id="radiografia" value=""><label for="cbox2">Glucosa</label><br>
-                     <input type="checkbox" id="ecografia" value=""><label for="cbox2">HhbA1C</label><br>
-                     <input type="checkbox" id="analisissangre" value=""><label for="cbox2">Urea/Creatinina</label><br>
-                     <input type="checkbox" id="analisisorina" value=""><label for="cbox2">Acido Urico</label><br>
-                     <input type="checkbox" id="tomografia" value=""><label for="cbox2">Colesterol/Triglicéridos</label>   
-                     <input type="checkbox" id="tomografia" value=""><label for="cbox2">Lipidograma</label>
-                     <input type="checkbox" id="tomografia" value=""><label for="cbox2">GOT/GPT/yGT</label>
-                     <input type="checkbox" id="tomografia" value=""><label for="cbox2">Bilirrubinas (T-D-I)</label>
-                     <input type="checkbox" id="tomografia" value=""><label for="cbox2">Fosfatasa Alcalina</label>
-                     <input type="checkbox" id="tomografia" value=""><label for="cbox2">Amilasa</label>
-                     <input type="checkbox" id="tomografia" value=""><label for="cbox2">Lipasa</label>
-                     <input type="checkbox" id="tomografia" value=""><label for="cbox2">Proteínas Totales</label>
-                     <input type="checkbox" id="tomografia" value=""><label for="cbox2">Relación A/G</label>
-                     <input type="checkbox" id="tomografia" value=""><label for="cbox2">CK Total/CK mb/GOT/LDH</label>
-                     <input type="checkbox" id="tomografia" value=""><label for="cbox2">Troponina I</label>
-                     <input type="checkbox" id="tomografia" value=""><label for="cbox2">Electrolitos(Na,K,Cl)</label>
-                     <input type="checkbox" id="tomografia" value=""><label for="cbox2">PCR</label>
-                     <input type="checkbox" id="tomografia" value=""><label for="cbox2">Calcio Iónico</label>
-                     <input type="checkbox" id="tomografia" value=""><label for="cbox2">Calcio, Magnesio, Fósforo</label>
-                </div>
-             </div>
-                <div class="row">
-                    <div class="col-md-6">
-                      <div>  Serología</div>
-                     <input type="checkbox" id="radiografia" value=""><label for="cbox2">TSH</label><br>
-                     <input type="checkbox" id="ecografia" value=""><label for="cbox2">FT4</label><br>
-                     <input type="checkbox" id="analisissangre" value=""><label for="cbox2">FT3</label><br>
-                     <input type="checkbox" id="analisisorina" value=""><label for="cbox2">Tiroglobulina</label><br>
-                     <input type="checkbox" id="tomografia" value=""><label for="cbox2">VDRL</label>   
-                     <input type="checkbox" id="tomografia" value=""><label for="cbox2">FTA- ABS IgG</label>
-                     <input type="checkbox" id="tomografia" value=""><label for="cbox2">FTA- ABS IgM</label>
-                     <input type="checkbox" id="tomografia" value=""><label for="cbox2">HIV 1 Ag + HIV 1-2 ac</label>
-                     <input type="checkbox" id="tomografia" value=""><label for="cbox2">ANA</label>
-                     <input type="checkbox" id="tomografia" value=""><label for="cbox2">Factor Reumatoideo</label>
-                     <input type="checkbox" id="tomografia" value=""><label for="cbox2">ASTO</label>
-                     <input type="checkbox" id="tomografia" value=""><label for="cbox2">C3</label>
-                     <input type="checkbox" id="tomografia" value=""><label for="cbox2">C4</label>
-                     <input type="checkbox" id="tomografia" value=""><label for="cbox2">Inmunoglobulinas (IgA,IgG,IgM)</label>
-                     <input type="checkbox" id="tomografia" value=""><label for="cbox2">IgE</label>
-                     <input type="checkbox" id="tomografia" value=""><label for="cbox2">Pas Total</label>
-                     <input type="checkbox" id="tomografia" value=""><label for="cbox2">Pas Libre</label>
-                     <input type="checkbox" id="tomografia" value=""><label for="cbox2">CEA</label>
-                     <input type="checkbox" id="tomografia" value=""><label for="cbox2">CA 125</label>
-                     <input type="checkbox" id="tomografia" value=""><label for="cbox2">CA 15-3</label>
-                     <input type="checkbox" id="tomografia" value=""><label for="cbox2">CA 19-9</label>
-                     <input type="checkbox" id="tomografia" value=""><label for="cbox2">Chagas IgG e IgM</label>
-                     <input type="checkbox" id="tomografia" value=""><label for="cbox2">Toxoplasmosis IgG e IgM</label>
-                     <input type="checkbox" id="tomografia" value=""><label for="cbox2">Citomegalovirus IgG e IgM</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-10">
-                      <div>  Orina</div>
-                     <input type="checkbox" id="radiografia" value=""><label for="cbox2">Orina Simple</label><br>
-                     <input type="checkbox" id="ecografia" value=""><label for="cbox2">Orina Frotis</label><br>
-                     <input type="checkbox" id="analisissangre" value=""><label for="cbox2">Orina Cultivo</label><br>  
-                    </div>
-                </div>
-                
-                <div class="row">
-                    <div class="col-md-10">
-                      <div>  Heces/Parasitología</div>
-                     <input type="checkbox" id="radiografia" value=""><label for="cbox2">Heces V y P</label><br>
-                     <input type="checkbox" id="ecografia" value=""><label for="cbox2">Heces Seriado</label><br>
-                     <input type="checkbox" id="analisissangre" value=""><label for="cbox2">Heces Frotis</label><br>
-                      <input type="checkbox" id="radiografia" value=""><label for="cbox2">Coprofuncional</label><br>
-                     <input type="checkbox" id="ecografia" value=""><label for="cbox2">Coprocultivo</label><br>
-                     <input type="checkbox" id="analisissangre" value=""><label for="cbox2">Sangre Oculta</label><br>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-10">
-                      <div> Microbiología</div>
-                     <label for="">Material</label>
-                        <input name="material" id="plan" class="form-control" placeholder="">
-                     <input type="checkbox" id="ecografia" value=""><label for="cbox2">Frotis</label><br>
-                     <input type="checkbox" id="analisissangre" value=""><label for="cbox2">Cultivo</label><br>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-10">
-                      <div> Otros</div>
-                     <label for="">Especificar</label>
-                        <input name="material" id="plan" class="form-control" placeholder="">
-                    </div>
-                </div>
+                 <a data-toggle="modal" href="#myModal3" class="btn btn-primary">Agregar Exámenes Clínicos</a>
                 
       </div>
-      <div class="modal-footer">
+        <div class="modal-footer">
         <input type="hidden" name="id_cita" id="id_cita">
         <input type="hidden" name="id_pacnt" id="id_pacnt" value="">
         <input type="submit" name="" class="btn btn-primary" value="Guardar">
@@ -202,6 +101,7 @@
     </div>
   </div>
 </div>
+
 <div class="modal" id="myModal2" data-backdrop="static">
 	<div class="modal-dialog">
       <div class="modal-content">
@@ -228,5 +128,9 @@
         
       </div>
     </div>
+    
 </div>
+<?php
+include_once('modal_analisis.php');
+?>
 
