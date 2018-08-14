@@ -11,7 +11,7 @@
     <title> - Iniciar Sesión - </title>
     <meta http-equiv="Content-Type" content="text/html; charset=uft-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <!-- bootstrap -->
     <link href="vistas/css/bootstrap/bootstrap.css" rel="stylesheet" />    
     <link href="vistas/css/bootstrap/bootstrap-overrides.css" type="text/css" rel="stylesheet" />

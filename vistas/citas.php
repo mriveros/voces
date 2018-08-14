@@ -50,11 +50,11 @@ ini_set('display_errors', 'on');
                                     <option value="">Seleccione</option>
                                     <?php
                                         foreach ($pacientes as $paciente) {
-                                            echo '<option value="'.$paciente['id_pacnt'].'">'.$paciente['nom_pacnt'].' '.$paciente['apel_pacnt'].'</option>';
+                                            echo '<option value="'.($paciente['id_pacnt']).'">'.$paciente['nom_pacnt'].' '.($paciente['apel_pacnt']).'</option>';
                                         }
                                     ?>                               
                                 </select>
-                                <input type="button" class="btn btn-primary verificar" id="buscarCita" value="Carga Rápida">
+                                <input type="button" class="btn btn-primary verificar" id="buscarCita" value="Carga R&aacute;pida">
                             </div>
                         </div>
                         
@@ -70,8 +70,9 @@ ini_set('display_errors', 'on');
                                     $query = "Select mot_cod,mot_nom from motivo where mot_activo='t' ";
                                     $resultadoSelect = pg_query($query);
                                     while ($row = pg_fetch_row($resultadoSelect)) {
+                                    
                                     echo "<option value=".$row[0].">";
-                                    echo $row[1];
+                                    echo ($row[1]);
                                     echo "</option>";
                                     }
                                     ?>
@@ -87,8 +88,8 @@ ini_set('display_errors', 'on');
                                     $query = "Select id_medic,nom_medic ||' '|| apel_medic from medic_cnslt where med_activo='t'";
                                     $resultadoSelect = pg_query($query);
                                     while ($row = pg_fetch_row($resultadoSelect)) {
-                                    echo "<option value=".$row[0].">";
-                                    echo $row[1];
+                                    echo "<option value=".($row[0]).">";
+                                    echo ($row[1]);
                                     echo "</option>";
                                     }
                                     ?>
@@ -111,7 +112,7 @@ ini_set('display_errors', 'on');
                         
                         
                         <div class="field-box">
-                            <label>Observación</label>
+                            <label>Observaci&oacute;n</label>
                             <div class="col-md-7">
                                  <textarea name="observacion_cita" id="observacion_cita" class="form-control" placeholder="Observación"></textarea>
                             </div>
